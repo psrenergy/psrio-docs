@@ -7,13 +7,13 @@ nav_order: 7
 
 After processing the data, it is convenient to save it to a file to store it and pass it around. 
 
-| Method                                                                      | Syntax                                              |
-|:----------------------------------------------------------------------------|:----------------------------------------------------|
-| Save with filename                                                          | `exp1:save("filename")`                             |
-| Save with filename and [options][saving-options]                            | `exp1:save("filename", {options})`                  |
-| Save with filename and return the expression                                | `exp = exp1:save_and_load("filename")`              |
-| Save with filename and [options][saving-options], and return the expression | `exp = exp1:save_and_load("filename", {optionals})` |
-
+| Method                                                                          | Syntax                                              |
+|:--------------------------------------------------------------------------------|:----------------------------------------------------|
+| Save with filename                                                              | `exp1:save("filename")`                             |
+| Save with filename and [options][saving-options]                                | `exp1:save("filename", {options})`                  |
+| Save with filename and return the new expression                                | `exp = exp1:save_and_load("filename")`              |
+| Save with filename and [options][saving-options], and return the new expression | `exp = exp1:save_and_load("filename", {options})`   |
+| Save in a temporary file (deleted at the end) and return the new expression     | `exp = exp1:save_cache()`                           |
 
 ## Saving Options
 
@@ -32,9 +32,9 @@ Saving options specify how PSRIO will save the data in a file. By default, when 
 
 ``` lua
 thermal = Hydro();
-gerter = thermal:load("gerter")
+gerter = thermal:load("gerter");
 
-agg_gerter = gerter:aggregate_stages(BY_AVERAGE())
+agg_gerter = gerter:aggregate_stages(BY_AVERAGE());
 agg_gerter:save("AggregatedGerter", { csv = true });
 ```
 
