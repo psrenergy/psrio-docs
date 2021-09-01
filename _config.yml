@@ -1,9 +1,9 @@
 title: "PSRIO"
 remote_theme: pmarsceill/just-the-docs
 
-aux_links:
-  "PSRIO Scripts on GitHub":
-    - "//github.com/psrenergy/psrio-scripts"
+# aux_links:
+#   "PSRIO Scripts on GitHub":
+#     - "//github.com/psrenergy/psrio-scripts"
 
 ga_tracking: G-0EBJYPVP12
 ga_tracking_anonymize_ip: true
