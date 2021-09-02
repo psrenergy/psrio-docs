@@ -37,7 +37,7 @@ useful_storage = require("sddp/useful_storage");
 useful_storage():save("useful_storage");
 ```
 
-### Circuit Loading (usecir)
+### Circuit Loading
 
 https://github.com/psrenergy/psrio-base/blob/master/sddp/usecir.lua
 
@@ -101,37 +101,38 @@ defcit_risk():save("defcit_risk");
 
 https://github.com/psrenergy/psrio-base/tree/master/sddp-reports
 
-### Generation Report (sddpgrxxd)
+### Load Marginal Cost Report
+
+https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua
 
 ```lua
-local function sddpgrxxd(suffix)
-    local hydro = Hydro();
-    local gerhid = hydro:load("gerhid" .. (suffix or ""));
-
-    local thermal = Thermal();
-    local gerter = thermal:load("gerter" .. (suffix or ""));
-    
-    local renewable = Renewable();
-    local gergnd = renewable:load("gergnd" .. (suffix or ""));
-    
-    local battery = Battery()
-    local gerbat = battery:load("gerbat" .. (suffix or ""));
-
-    local system = System()
-    local defcit = system:load("defcit" .. (suffix or ""));
-
-    return concatenate(
-        gerhid:aggregate_agents(BY_SUM(), "Total Hydro"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE()),
-        gerter:aggregate_agents(BY_SUM(), "Total Thermal"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE()),
-        gergnd:aggregate_agents(BY_SUM(), "Total Renewable"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE()),
-        gerbat:aggregate_agents(BY_SUM(), "Total Battery"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE()):convert("GWh"),
-        defcit:aggregate_agents(BY_SUM(), "Deficit"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE())
-    );
+local function sddpcmgd(suffix)
+    local system = System();
+    local cmgdem = system:load("cmgdem" .. (suffix or ""));
+    return cmgdem:aggregate_blocks(BY_AVERAGE()):aggregate_scenarios(BY_AVERAGE());
 end
-return sddpgrxxd;
+return sddpcmgd;
 ```
 
 ```lua
-sddpgrxxd = require("sddp/sddpgrxxd");
-sddpgrxxd():save("sddpgrxxd");
+sddpcmgd = require("sddp/sddpcmgd");
+sddpcmgd():save("sddpcmgd");
 ```
+
+### Averaged Load Marginal Cost Report
+
+https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmga.lua
+
+```lua
+local function sddpcmga(suffix)
+    local sddpcmgd = require("sddp-reports/sddpcmgd");
+    return sddpcmgd(suffix):aggregate_stages(BY_AVERAGE(), Profile.PER_YEAR);
+end
+return sddpcmga;
+```
+
+```lua
+sddpcmga = require("sddp/sddpcmga");
+sddpcmga():save("sddpcmga");
+```
+
