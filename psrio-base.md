@@ -14,15 +14,15 @@ nav_order: 9
 
 ---
 
-https://github.com/psrenergy/psrio-base
+[psrio-base](https://github.com/psrenergy/psrio-base)
 
 ## SDDP
 
-https://github.com/psrenergy/psrio-base/tree/master/sddp
+[psrio-base/sddp](https://github.com/psrenergy/psrio-base/tree/master/sddp)
 
 ### Useful Storage
 
-https://github.com/psrenergy/psrio-base/blob/master/sddp/useful_storage.lua
+[psrio-base/sddp/useful_storage.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/useful_storage.lua)
 
 ```lua
 local function useful_storage()
@@ -39,7 +39,7 @@ useful_storage():save("useful_storage");
 
 ### Circuit Loading
 
-https://github.com/psrenergy/psrio-base/blob/master/sddp/usecir.lua
+[psrio-base/sddp/usecir.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/usecir.lua)
 
 ``` lua
 local function usecir(suffix)
@@ -57,7 +57,7 @@ usecir():save("usecir");
 
 ### Hydro Generation per Bus
 
-https://github.com/psrenergy/psrio-base/blob/master/sddp/gerhid_per_bus.lua
+[psrio-base/sddp/gerhid_per_bus.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/gerhid_per_bus.lua)
 
 ```lua
 local function gerhid_per_bus(suffix)
@@ -79,7 +79,7 @@ end
 
 ### Deficit Risk per Year
 
-https://github.com/psrenergy/psrio-base/blob/master/sddp/defcit_risk.lua
+[psrio-base/sddp/defcit_risk.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/defcit_risk.lua)
 
 ```lua
 local function defcit_risk(suffix)
@@ -99,11 +99,11 @@ defcit_risk():save("defcit_risk");
 
 ## SDDP Reports
 
-https://github.com/psrenergy/psrio-base/tree/master/sddp-reports
+[psrio-base/sddp-reports](https://github.com/psrenergy/psrio-base/tree/master/sddp-reports)
 
 ### Load Marginal Cost Report
 
-https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua
+[psrio-base/sddp-reports/sddpcmgd.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua)
 
 ```lua
 local function sddpcmgd(suffix)
@@ -121,7 +121,7 @@ sddpcmgd():save("sddpcmgd");
 
 ### Averaged Load Marginal Cost Report
 
-https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmga.lua
+[psrio-base/sddp-reports/sddpcmga.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmga.lua)
 
 ```lua
 local function sddpcmga(suffix)
