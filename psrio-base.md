@@ -14,11 +14,15 @@ nav_order: 9
 
 ---
 
-[psrio-base](https://github.com/psrenergy/psrio-base)
+PSRIO Base is a library whose purpose is to provide a set of functions which execute frequently requested output processing tasks. So, instead of rewriting PSRIO recipes, or searching for written similar scripts, one can make use of the functions offered by PSRIO Base.
+
+PSRIO Base repository: [psrio-base](https://github.com/psrenergy/psrio-base)
 
 ## SDDP
 
-[psrio-base/sddp](https://github.com/psrenergy/psrio-base/tree/master/sddp)
+SDDP is one of the most used model of PSR. PSRIO Base has wide collection of functions to help users create their scripts for post processing tasks.
+
+PSRIO Base library for SDDP: [psrio-base/sddp](https://github.com/psrenergy/psrio-base/tree/master/sddp)
 
 ### Useful Storage
 
