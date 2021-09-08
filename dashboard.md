@@ -53,8 +53,8 @@ After creating the chart object, we can start to push the data in it. PSRIO give
 
 The basic workflow in PSRIO to create a dashboard is:
 
-1. Load the collections and data
-2. Make the processing
+1. Load the collections and the data
+2. Aggregate or process the data
 3. Create the chart and push the data
 4. Create the dashboard and push the chart
 5. Save the dashboard
