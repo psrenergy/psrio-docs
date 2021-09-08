@@ -72,6 +72,8 @@ end
 return gerhid_per_bus;
 ```
 
+We can load the `gerhid_per_bus` script with different suffixes. In PSR, we have models the produce the `gerhid__day`, `gerhid__week`, `gerhid__hour`, and `gerhid__trueup`:
+
 ```lua
 local gerhid_per_bus = require("sddp/gerhid_per_bus");
 
@@ -86,17 +88,6 @@ end
 Deficit risk is measured by the probability that the system will not supply the energy demand by the load. The function [sddp/defcit_risk](https://github.com/psrenergy/psrio-base/blob/master/sddp/defcit_risk.lua) executes the calculation of the deficit risk per year in the study case. 
 
 ```lua
-local function defcit_risk(suffix)
-    local system = System();
-    local defcit = system:load("defcit" .. (suffix or "")); 
-    return ifelse(defcit:aggregate_blocks(BY_SUM())
-        :aggregate_stages(BY_SUM(), Profile.PER_YEAR):gt(0), 1, 0)
-        :aggregate_scenarios(BY_AVERAGE()):convert("%");
-end
-return defcit_risk;
-```
-
-```lua
 local defcit_risk = require("sddp/defcit_risk");
 defcit_risk():save("defcit_risk");
 ```
@@ -108,15 +99,6 @@ defcit_risk():save("defcit_risk");
 The load marginal cost determines the spot price of the electrical energy in the market. The [sddp-reports/sddpcmgd](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua) defines the script that averages the blocks and scenarios of the cmgdem output:
 
 ```lua
-local function sddpcmgd(suffix)
-    local system = System();
-    local cmgdem = system:load("cmgdem" .. (suffix or ""));
-    return cmgdem:aggregate_blocks(BY_AVERAGE()):aggregate_scenarios(BY_AVERAGE());
-end
-return sddpcmgd;
-```
-
-```lua
 local sddpcmgd = require("sddp/sddpcmgd");
 sddpcmgd():save("sddpcmgd");
 ```
@@ -125,13 +107,6 @@ sddpcmgd():save("sddpcmgd");
 
 Similar to `sddpcmgd`, the [sddp-reports/sddpcmga](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmga.lua) averages the load marginal cost per year.
 
-```lua
-local function sddpcmga(suffix)
-    local sddpcmgd = require("sddp-reports/sddpcmgd");
-    return sddpcmgd(suffix):aggregate_stages(BY_AVERAGE(), Profile.PER_YEAR);
-end
-return sddpcmga;
-```
 
 ```lua
 local sddpcmga = require("sddp/sddpcmga");
