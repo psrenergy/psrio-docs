@@ -14,21 +14,15 @@ nav_order: 9
 
 ---
 
-PSRIO Base is a library whose purpose is to provide a set of functions which execute frequently requested output processing tasks. So, instead of rewriting PSRIO recipes, or searching for written similar scripts, one can make use of the functions offered by PSRIO Base.
+[PSRIO Base](https://github.com/psrenergy/psrio-base) is a library embedded with PSRIO that provides implementations of PSR model outputs. Instead of rewriting recipes or searching for written similar scripts, we can use the functions provided by PSRIO Base.
 
-PSRIO Base repository: [psrio-base](https://github.com/psrenergy/psrio-base)
+We use the function `require` to load the scripts defined in the PSRIO Base. 
 
 ## SDDP
 
-SDDP is one of the most used model of PSR. PSRIO Base has a wide collection of functions to help users create their scripts for post processing tasks.
-
-PSRIO Base library for SDDP: [psrio-base/sddp](https://github.com/psrenergy/psrio-base/tree/master/sddp)
-
 ### Useful Storage
 
-Useful storage is the part of the reservoir from the hidroelectric plant that can be turbined for energy conversion in the electric generators. Below, it is possible to see how the function that calculates this parameter is defined in PSRIO Base:
-
-link to function definition: [psrio-base/sddp/useful_storage.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/useful_storage.lua)
+The [sddp/useful_storage](https://github.com/psrenergy/psrio-base/blob/master/sddp/useful_storage.lua) defines the useful storage output:
 
 ```lua
 local function useful_storage()
@@ -38,17 +32,16 @@ end
 return useful_storage;
 ```
 
-To use the funcion above, the `require` command must be used in order to access the method. After that, the function can be used in the script as shown below:
+First, we load the script with the `require` function and then save the output.
+
 ```lua
-useful_storage = require("sddp/useful_storage");
+local useful_storage = require("sddp/useful_storage");
 useful_storage():save("useful_storage");
 ```
 
 ### Circuit Loading
 
-The circuit loading data is useful to monitor the electric system represented in SDDP, indicating eventual overload in the system's circuits. The percentage of power flow with respect to the circuit capacity is calculated throught use of the function `usecir` provided by PSRIO Base.
-
-link to function definition: [psrio-base/sddp/usecir.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/usecir.lua)
+The second example presents the [sddp/usecir](https://github.com/psrenergy/psrio-base/blob/master/sddp/usecir.lua) script:
 
 ``` lua
 local function usecir(suffix)
@@ -59,16 +52,16 @@ end
 return usecir;
 ```
 
+The circuit loading data is helpful to monitor the electric system represented in SDDP, indicating eventual overload in the system's circuits. The following code shows how we load and save the percentage of power flow concerning the circuit capacity:
+
 ``` lua
-usecir = require("sddp/usecir");
+local usecir = require("sddp/usecir");
 usecir():save("usecir");
 ```
 
 ### Hydro Generation per Bus
 
-Hydro generation per bus allows the knowledge of the contribution of hydro power plants to the power injected in the buses declared in SDDP. This variable can be calculated by the function `gerhid_per_bus`.
-
-link to function definition: [psrio-base/sddp/gerhid_per_bus.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/gerhid_per_bus.lua)
+The third example loads the [sddp/gerhid_per_bus](https://github.com/psrenergy/psrio-base/blob/master/sddp/gerhid_per_bus.lua) script. Hydro generation per bus allows understanding the contribution of hydropower plants to the power injected in the buses declared in SDDP. 
 
 ```lua
 local function gerhid_per_bus(suffix)
@@ -80,9 +73,9 @@ return gerhid_per_bus;
 ```
 
 ```lua
-gerhid_per_bus = require("sddp/gerhid_per_bus");
+local gerhid_per_bus = require("sddp/gerhid_per_bus");
 
-suffixes = {"__day", "__week", "__hour", "__trueup"};
+local suffixes = {"__day", "__week", "__hour", "__trueup"};
 for i, suffix in ipairs(suffixes) do 
     gerhid_per_bus(suffix):save("gerhid_per_bus" .. suffix); 
 end
@@ -90,9 +83,7 @@ end
 
 ### Deficit Risk per Year
 
-Deficit risk is measured by the probability that the system will not be able to supply the energy demand by the load. The function `deficit_risk` executes the calculation of the deficit risk per year in study case. 
-
-link to function definition: [psrio-base/sddp/defcit_risk.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp/defcit_risk.lua)
+Deficit risk is measured by the probability that the system will not supply the energy demand by the load. The function [sddp/defcit_risk](https://github.com/psrenergy/psrio-base/blob/master/sddp/defcit_risk.lua) executes the calculation of the deficit risk per year in the study case. 
 
 ```lua
 local function defcit_risk(suffix)
@@ -106,21 +97,15 @@ return defcit_risk;
 ```
 
 ```lua
-defcit_risk = require("sddp/defcit_risk");
+local defcit_risk = require("sddp/defcit_risk");
 defcit_risk():save("defcit_risk");
 ```
 
 ## SDDP Reports
 
-SDDP reports are remarkable outputs produced by the model. PSRIO Base also provides a set of functions for these types of outputs.
-
-PSRIO Base library for SDDP reports: [psrio-base/sddp-reports](https://github.com/psrenergy/psrio-base/tree/master/sddp-reports)
-
 ### Load Marginal Cost Report
 
-The load marginal cost is a valuable information, since, in some systems, it determines the spot price of the electrical energy in the market. Throught the use of `sddpcmgd` it is possible to calculate this variable.
-
-link to function definition: [psrio-base/sddp-reports/sddpcmgd.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua)
+The load marginal cost determines the spot price of the electrical energy in the market. The [sddp-reports/sddpcmgd](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua) defines the script that averages the blocks and scenarios of the cmgdem output:
 
 ```lua
 local function sddpcmgd(suffix)
@@ -132,15 +117,13 @@ return sddpcmgd;
 ```
 
 ```lua
-sddpcmgd = require("sddp/sddpcmgd");
+local sddpcmgd = require("sddp/sddpcmgd");
 sddpcmgd():save("sddpcmgd");
 ```
 
 ### Averaged Load Marginal Cost Report
 
-Similar to `sddpcmgd`, the function `sddpcmga` returns the average load marginal cost of a system considering the stages of a case study.
-
-link to function definition: [psrio-base/sddp-reports/sddpcmga.lua](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmga.lua)
+Similar to `sddpcmgd`, the [sddp-reports/sddpcmga](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmga.lua) averages the load marginal cost per year.
 
 ```lua
 local function sddpcmga(suffix)
@@ -151,7 +134,6 @@ return sddpcmga;
 ```
 
 ```lua
-sddpcmga = require("sddp/sddpcmga");
+local sddpcmga = require("sddp/sddpcmga");
 sddpcmga():save("sddpcmga");
 ```
-
