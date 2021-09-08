@@ -101,7 +101,7 @@ gerhid = hydro:load("gerhid"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_
 light_blue = "#8583ff";
 
 chart = Chart("Hydro Generation");
-chart:add_line(gerhid, {yMin = 0, color = light_blue});
+chart:add_line(gerhid, {yMin=0, color=light_blue});
 
 dashboard = Dashboard("SDDP");
 dashboard:push(chart);
