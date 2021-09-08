@@ -159,7 +159,11 @@ outdfact = generic:load("outdfact");
 | Energy to be consumed by demand segment (hourly) | MW   | `exp = demand_segment.hour`             |
 | Energy to be consumed by demand segment (block)  | GWh  | `exp = demand_segment.block`            |
 
-<!-- ### Expansion Project -->
+### Expansion Project
+
+| Data             | Unit     | Syntax                                 |
+|:-----------------|:--------:|:---------------------------------------|
+| O&M Cost         | $/kWyear | `exp = expansion_project.omcost`       |
 
 ### Fuel
 
