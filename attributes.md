@@ -14,7 +14,32 @@ nav_order: 4
 
 ---
 
-TODO - mostrar que cada atributo tem um estagio inicial, cenarios, blocos...
+``` lua
+thermal = Thermal();
+gerter = thermal:load("gerter");
+```
+
+```sh
+[info] Loading gerter (stages: 12 [1:12] [monthly] [10/2016], blocks: hour, scenarios: 1200, unit: GWh, agents: 3 [thermal])
+```
+
+`exp:stages()` = 12
+
+`gerter:initial_stage()` = 10
+
+`gerter:initial_year()` = 2016
+
+`gerter:stage_type()` = 2 
+
+`gerter:is_hourly()` = true
+
+`gerter:scenarios()` = 1200
+
+`gerter:unit()` = "GWh"
+
+`gerter:agents()` = {"Thermal 1", "Thermal 2", "Thermal 3"}
+   
+`gerter:agents_size()` = 3
 
 ## Stage
 
