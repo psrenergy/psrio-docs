@@ -35,7 +35,7 @@ return useful_storage;
 First, we load the script with the `require` function and then save the output.
 
 ```lua
-local useful_storage = require("sddp/useful_storage");
+useful_storage = require("sddp/useful_storage");
 useful_storage():save("useful_storage");
 ```
 
@@ -55,7 +55,7 @@ return usecir;
 The circuit loading data is helpful to monitor the electric system represented in SDDP, indicating eventual overload in the system's circuits. The following code shows how we load and save the percentage of power flow concerning the circuit capacity:
 
 ``` lua
-local usecir = require("sddp/usecir");
+usecir = require("sddp/usecir");
 usecir():save("usecir");
 ```
 
@@ -75,9 +75,9 @@ return gerhid_per_bus;
 We can load the `gerhid_per_bus` script with different suffixes. In PSR, we have models the produce the `gerhid__day`, `gerhid__week`, `gerhid__hour`, and `gerhid__trueup`:
 
 ```lua
-local gerhid_per_bus = require("sddp/gerhid_per_bus");
+gerhid_per_bus = require("sddp/gerhid_per_bus");
 
-local suffixes = {"__day", "__week", "__hour", "__trueup"};
+suffixes = {"__day", "__week", "__hour", "__trueup"};
 for i, suffix in ipairs(suffixes) do 
     gerhid_per_bus(suffix):save("gerhid_per_bus" .. suffix); 
 end
@@ -88,7 +88,7 @@ end
 Deficit risk is measured by the probability that the system will not supply the energy demand by the load. The function [sddp/defcit_risk](https://github.com/psrenergy/psrio-base/blob/master/sddp/defcit_risk.lua) executes the calculation of the deficit risk per year in the study case. 
 
 ```lua
-local defcit_risk = require("sddp/defcit_risk");
+defcit_risk = require("sddp/defcit_risk");
 defcit_risk():save("defcit_risk");
 ```
 
@@ -99,7 +99,7 @@ defcit_risk():save("defcit_risk");
 The load marginal cost determines the spot price of the electrical energy in the market. The [sddp-reports/sddpcmgd](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua) defines the script that averages the blocks and scenarios of the cmgdem output:
 
 ```lua
-local sddpcmgd = require("sddp/sddpcmgd");
+sddpcmgd = require("sddp/sddpcmgd");
 sddpcmgd():save("sddpcmgd");
 ```
 
@@ -109,6 +109,6 @@ Similar to `sddpcmgd`, the [sddp-reports/sddpcmga](https://github.com/psrenergy/
 
 
 ```lua
-local sddpcmga = require("sddp/sddpcmga");
+sddpcmga = require("sddp/sddpcmga");
 sddpcmga():save("sddpcmga");
 ```
