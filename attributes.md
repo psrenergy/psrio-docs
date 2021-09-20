@@ -14,13 +14,14 @@ nav_order: 4
 
 ---
 
-Attributes are properties that characterize an object or, in the context of PSRIO, an expression. Expressions related to results of a PSR model, whose data can change over stages, scenarios, and blocks, for example, have a set of attributes in PSRIO that can be useful in some tasks. In the example below, we load the thermal generation, and the log shows some expression's attributes information.
-
+Attributes are properties that characterize an object or, in the context of PSRIO, an expression. Expressions related to results of a PSR model, whose data can change over stages, scenarios, and blocks, for example, have a set of attributes in PSRIO that can be useful in some tasks. In the example below, we load the thermal generation:
 
 ``` lua
 thermal = Thermal();
 gerter = thermal:load("gerter");
 ```
+
+And the log shows some expression's attributes information:
 
 ```sh
 [info] Loading gerter (stages: 12 [1:12] [monthly] [10/2016], blocks: hour, scenarios: 1200, unit: GWh, agents: 3 [thermal])
