@@ -29,24 +29,6 @@ And the log shows some expression's attributes information:
 
 Some of the attributes, and its values, of `gerter` in this example are:
 
-`exp:stages()` = 12
-
-`gerter:initial_stage()` = 10
-
-`gerter:initial_year()` = 2016
-
-`gerter:stage_type()` = 2 
-
-`gerter:is_hourly()` = true
-
-`gerter:scenarios()` = 1200
-
-`gerter:unit()` = "GWh"
-
-`gerter:agents()` = {"Thermal 1", "Thermal 2", "Thermal 3"}
-   
-`gerter:agents_size()` = 3
-
 All attributes related to stages, block, scenarios, agents and units of an expression are presented in the tables below.
 
 ## Stage
@@ -63,6 +45,28 @@ All attributes related to stages, block, scenarios, agents and units of an expre
 | Month           | number          | `attribute = exp:month(stage)`    |
 | Year            | number          | `attribute = exp:year(stage)`     |
 
+
+```lua 
+stages = gerter:stages() -- 12
+
+stage1 = gerter:stage(1) -- 10
+stage2 = gerter:stage(2) -- 11
+stage3 = gerter:stage(3) -- 12
+stage4 = gerter:stage(4) -- 13
+
+stage_type = gerter:stage_type() -- 2 (monthly)
+
+initial_stage = gerter:initial_stage() -- 10
+initial_year = gerter:initial_year() -- 2016
+final_year = gerter:final_year() -- 2017
+
+month1 = gerter:month(1) -- 10
+month2 = gerter:month(2) -- 11
+
+year1 = gerter:year(1) -- 2016
+year4 = gerter:year(4) -- 2017
+```
+
 ## Blocks
 
 | Operator        | Type            |            Syntax                 |
@@ -71,11 +75,26 @@ All attributes related to stages, block, scenarios, agents and units of an expre
 | Has blocks      | boolean         | `attribute = exp:has_blocks()`    |
 | Is hourly       | boolean         | `attribute = exp:is_hourly()`     |
 
+
+```lua 
+blocks1 = gerter:blocks(1) -- 744
+blocks2 = gerter:blocks(2) -- 720
+
+has_blocks = gerter:has_blocks() -- true
+
+is_hourly = gerter:is_hourly() -- true
+```
+
 ## Scenarios
 
 | Operator        | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Scenarios       | number          | `attribute = exp:scenarios()`     |
+
+
+```lua 
+scenarios = gerter:scenarios() -- 1200
+```
 
 ## Agents
 
@@ -85,8 +104,23 @@ All attributes related to stages, block, scenarios, agents and units of an expre
 | Agents Size     | number            | `attribute = exp:agents_size()`   |
 | Agent           | string            | `attribute = exp:agent(index)`    |
 
+
+```lua 
+agents = gerter:agents() -- {"Thermal 1", "Thermal 2", "Thermal 3"}
+
+agents_size = gerter:agents_size() -- 3
+
+agent1 = gerter:agent(1) -- "Thermal 1"
+agent2 = gerter:agent(2) -- "Thermal 2"
+agent3 = gerter:agent(3) -- "Thermal 3"
+```
+
 ## Unit
 
 | Operator        | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Unit            | string          | `attribute = exp:unit()`          |
+
+```lua 
+unit = gerter:unit() -- "GWh"
+```
