@@ -64,6 +64,8 @@ final_year = gerter:final_year() -- 2017
 
 month1 = gerter:month(1) -- 10
 month2 = gerter:month(2) -- 11
+month3 = gerter:month(3) -- 12
+month4 = gerter:month(4) --  1
 
 year1 = gerter:year(1) -- 2016
 year4 = gerter:year(4) -- 2017
