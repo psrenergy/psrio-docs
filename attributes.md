@@ -45,6 +45,8 @@ All attributes related to stages, block, scenarios, agents and units of an expre
 | Month           | number          | `attribute = exp:month(stage)`    |
 | Year            | number          | `attribute = exp:year(stage)`     |
 
+#### Example 
+{: .no_toc}
 
 ```lua 
 stages = gerter:stages() -- 12
@@ -75,6 +77,8 @@ year4 = gerter:year(4) -- 2017
 | Has blocks      | boolean         | `attribute = exp:has_blocks()`    |
 | Is hourly       | boolean         | `attribute = exp:is_hourly()`     |
 
+#### Example 
+{: .no_toc}
 
 ```lua 
 blocks1 = gerter:blocks(1) -- 744
@@ -91,6 +95,8 @@ is_hourly = gerter:is_hourly() -- true
 |:----------------|:---------------:|:----------------------------------|
 | Scenarios       | number          | `attribute = exp:scenarios()`     |
 
+#### Example 
+{: .no_toc}
 
 ```lua 
 scenarios = gerter:scenarios() -- 1200
@@ -104,6 +110,8 @@ scenarios = gerter:scenarios() -- 1200
 | Agents Size     | number            | `attribute = exp:agents_size()`   |
 | Agent           | string            | `attribute = exp:agent(index)`    |
 
+#### Example 
+{: .no_toc}
 
 ```lua 
 agents = gerter:agents() -- {"Thermal 1", "Thermal 2", "Thermal 3"}
@@ -120,6 +128,9 @@ agent3 = gerter:agent(3) -- "Thermal 3"
 | Operator        | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Unit            | string          | `attribute = exp:unit()`          |
+
+#### Example 
+{: .no_toc}
 
 ```lua 
 unit = gerter:unit() -- "GWh"
