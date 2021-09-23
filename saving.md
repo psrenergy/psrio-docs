@@ -46,5 +46,5 @@ hydro = Hydro();
 hydro.qmax:save("mnsout", { horizon = true });
 ```
 
-[saving-options]: https://psrenergy.github.io/psrio-scripts/saving.html#saving-options
+[saving-options]: https://psrenergy.github.io/psrio-docs/saving.html#saving-options
 

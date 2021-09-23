@@ -537,7 +537,7 @@ gergnd = renewable:load("gergnd");
 generation = concatenate(gerhid, gerter, gergnd);
 ```
 
-[aggregate-functions]: https://psrenergy.github.io/psrio-scripts/dimensions.html#aggregate-functions
-[aggregate-stages]: https://psrenergy.github.io/psrio-scripts/dimensions.html#aggregate-stages
-[collections]: https://psrenergy.github.io/psrio-scripts/dimensions.html#collections
-[profiles]: https://psrenergy.github.io/psrio-scripts/dimensions.html#profiles
+[aggregate-functions]: https://psrenergy.github.io/psrio-docs/dimensions.html#aggregate-functions
+[aggregate-stages]: https://psrenergy.github.io/psrio-docs/dimensions.html#aggregate-stages
+[collections]: https://psrenergy.github.io/psrio-docs/dimensions.html#collections
+[profiles]: https://psrenergy.github.io/psrio-docs/dimensions.html#profiles
