@@ -26,10 +26,15 @@ And the log shows some expression's attributes information:
 ```sh
 [info] Loading gerter (stages: 12 [1:12] [monthly] [10/2016], blocks: hour, scenarios: 1200, unit: GWh, agents: 3 [thermal])
 ```
+From the log, it is possible to see that `gerter` has:
+* 12 stages in a month-level resolution
+* initial stage in 10/2016
+* blocks 
+* 1200 scenarios
+* generation data given in GWh
+* 3 agents
 
-Some of the attributes, and its values, of `gerter` in this example are:
-
-All attributes related to stages, block, scenarios, agents and units of an expression are presented in the tables below.
+All attributes related to stages, block, scenarios, agents and units of an expression and their respective methods are presented in the tables below.
 
 ## Stage
 
