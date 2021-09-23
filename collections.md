@@ -273,8 +273,8 @@ outdfact = generic:load("outdfact");
 
 | Data                | Unit  | Syntax                                                        |
 |:--------------------|:-----:|:--------------------------------------------------------------|
-| Hourly Capacity     | MW    | `exp = power_injection.hour_capacity`                          |
-| Hourly Price        | $/MWh | `exp = power_injection.hour_price`                             |
+| Hourly Capacity     | MW    | `exp = power_injection.hour_capacity`                         |
+| Hourly Price        | $/MWh | `exp = power_injection.hour_price`                            |
 
 ### Renewable
 
@@ -285,7 +285,7 @@ outdfact = generic:load("outdfact");
 | Installed Capacity                               | MW    | `exp = renewable.capacity`                                   |
 | O&M Cost                                         | $/MWh | `exp = renewable.omcost`                                     |
 
-### Renewable Gauging Station
+<!-- ### Renewable Gauging Station
 
 | Data                | Unit  | Syntax                                                       |
 |:--------------------|:-----:|:-------------------------------------------------------------|
@@ -307,15 +307,15 @@ outdfact = generic:load("outdfact");
 |                     | ---   | `exp = study.hours`                                          |
 |                     | ---   | `exp = study.stages`                                         |
 |                     | ---   | `exp = study.stages_per_year`                                |
-|                     | ---   | `exp = study.scenarios`                                      |
+|                     | ---   | `exp = study.scenarios`                                      | -->
 
-### System
+<!-- ### System
 
 | Data                | Unit  | Syntax                                                       |
 |:--------------------|:-----:|:-------------------------------------------------------------|
 |                     | ---   | `exp = system.duraci`                                        |
 |                     | ---   | `exp = system.hblock`                                        |
-|                     | ---   | `exp = system.sensitivity`                                   |
+|                     | ---   | `exp = system.sensitivity`                                   | -->
 
 ### Thermal
 
