@@ -64,6 +64,10 @@ Additionally, PSRIO also enables the direct creation of dashboards.
 
 Having trouble with PSRIO? Contact our support team via `sddp@psr-inc.com` and we’ll help you sort it out.
 
+```math
+\mathbb{E}_{j \in i^+, \varphi \in \Omega_j}[V_j(x^\prime, \varphi)] = \sum\limits_{j \in i^+} p_{ij} \sum\limits_{\varphi \in \Omega_j} p_{\varphi}V_j(x^\prime, \varphi).
+```
+
 
  <!-- O processamento de dados de entrada e saída é uma etapa fundamental para a compreensão dos resultados, elaboração de estudos e encadeamento com outros modelos. As ferramentas tradicionalmente utilizadas como o Excel ou rotinas feitas sob medida para o processamento de arquivos específicos, além de trabalhosas, repetitivas e sujeitas a erro, possuem limitações relacionadas a escalabilidade devido ao aumento no volume de resultados originado da maior complexidade e detalhamento na representação dos modelos.
 Para complementar o conjunto de ferramentas da PSR, foi desenvolvido o PSRIO. Ele é um interpretador de scripts Lua que permite manipular bases de dados da PSR (entrada e resultados) e realizar todas as operações matemáticas e cálculos de estatísticas necessários de forma rápida, customizável e extremamente amigável. Operações como a soma de agentes, média dos cenários, cálculo de percentis, conversão de unidades e diversas outras podem ser realizadas em menos poucas linhas de script, sem a preocupação com fórmulas ou programação de loops para leitura, processamento e escrita de arquivos. Os resultados são salvos no formato padrão e podem ser utilizados pelo graficador, para criação de dashboards, no Excel, diretamente em relatórios ou até mesmo como dado de entrada para outro modelo.
