@@ -19,7 +19,6 @@ nav_order: 10
 ``` lua
 circuit = Circuit();
 cirflw = circuit:load("cirflw");
-    
 (cirflw:abs() / circuit.capacity):convert("%"):save("usecir");
 ```
 
@@ -31,7 +30,7 @@ deficit = system:load("defcit");
 
 deficit = deficit:aggregate_blocks(BY_SUM());
 deficit = deficit:aggregate_stages(BY_SUM(), Profile.PER_YEAR);
-    
+
 ifelse(deficit:gt(0), 1, 0):aggregate_scenarios(BY_AVERAGE()):convert("%"):save("deficit_risk");
 ```
 
