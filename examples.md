@@ -62,3 +62,22 @@ concatenate(
     gergnd:select_agents(small_hydro):aggregate_agents(BY_SUM(), "Small Hydro")
 ):save("gergnd_per_technology");
 ```
+
+## Renewable Generation per System and Technology
+
+``` lua
+renewable = Renewable();
+gergnd = renewable:load("gergnd");
+
+general = renewable.tech_type:eq(0);
+wind = renewable.tech_type:eq(1);
+solar = renewable.tech_type:eq(2);
+biomass = renewable.tech_type:eq(3);
+small_hydro = renewable.tech_type:eq(4);
+
+ifelse(general, gergnd, 0):aggregate_agents(BY_AVERAGE(), Collection.SYSTEM):save("gergnd_per_system_general");
+ifelse(wind, gergnd, 0):aggregate_agents(BY_AVERAGE(), Collection.SYSTEM):save("gergnd_per_system_wind");
+ifelse(solar, gergnd, 0):aggregate_agents(BY_AVERAGE(), Collection.SYSTEM):save("gergnd_per_system_solar");
+ifelse(biomass, gergnd, 0):aggregate_agents(BY_AVERAGE(), Collection.SYSTEM):save("gergnd_per_system_biomass");
+ifelse(small_hydro, gergnd, 0):aggregate_agents(BY_AVERAGE(), Collection.SYSTEM):save("gergnd_per_system_small_hydro");
+```
