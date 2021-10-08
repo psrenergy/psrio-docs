@@ -38,7 +38,7 @@ All attributes related to stages, block, scenarios, agents and units of an expre
 
 ## Stage
 
-| Operator        | Type            |            Syntax                 |
+| Method          | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Stages          | number          | `attribute = exp:stages()`        |
 | Stage           | number          | `attribute = exp:stage(index)`    |
@@ -78,7 +78,7 @@ year4 = gerter:year(4) -- 2017
 
 ## Blocks
 
-| Operator        | Type            |            Syntax                 |
+| Method          | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Blocks          | number          | `attribute = exp:blocks(stage)`   |
 | Has blocks      | boolean         | `attribute = exp:has_blocks()`    |
@@ -98,7 +98,7 @@ is_hourly = gerter:is_hourly() -- true
 
 ## Scenarios
 
-| Operator        | Type            |            Syntax                 |
+| Method          | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Scenarios       | number          | `attribute = exp:scenarios()`     |
 
@@ -111,7 +111,7 @@ scenarios = gerter:scenarios() -- 1200
 
 ## Agents
 
-| Operator        | Type              |            Syntax                 |
+| Method          | Type              |            Syntax                 |
 |:----------------|:-----------------:|:----------------------------------|
 | Agents          | vector of strings | `attribute = exp:agents()`        |
 | Agents Size     | number            | `attribute = exp:agents_size()`   |
@@ -132,7 +132,7 @@ agent3 = gerter:agent(3) -- "Thermal 3"
 
 ## Unit
 
-| Operator        | Type            |            Syntax                 |
+| Method          | Type            |            Syntax                 |
 |:----------------|:---------------:|:----------------------------------|
 | Unit            | string          | `attribute = exp:unit()`          |
 

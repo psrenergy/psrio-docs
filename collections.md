@@ -305,9 +305,19 @@ outdfact = generic:load("outdfact");
 |                     | ---   | `exp = study.blocks`                                         |
 |                     | ---   | `exp = study.hour`                                           |
 |                     | ---   | `exp = study.hours`                                          |
-|                     | ---   | `exp = study.stages`                                         |
-|                     | ---   | `exp = study.stages_per_year`                                |
-|                     | ---   | `exp = study.scenarios`                                      | -->
+
+| Method              | Type    | Syntax                                                       |
+|:--------------------|:-------:|:-------------------------------------------------------------|
+|                     | boolean | `attribute = study:is_hourly()`                              |
+|                     | boolean | `attribute = study:is_genesys()`                             |
+|                     | boolean | `attribute = study:is_hourly_load()`                         |
+|                     | string  | `attribute = study:path()`                                   |
+|                     | string  | `attribute = study:parent_path()`                            |
+|                     | number  | `attribute = study:get_parameter(key)`                       |
+|                     | number  | `attribute = study:stages()`                                 |
+|                     | number  | `attribute = study:stages_per_year()`                        |
+|                     | number  | `attribute = study:scenarios()`                              | 
+|                     | number  | `attribute = study:scenarios()`                              | 
 
 <!-- ### System
 
