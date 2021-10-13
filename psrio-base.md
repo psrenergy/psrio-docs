@@ -99,7 +99,7 @@ defcit_risk():save("defcit_risk");
 The load marginal cost determines the spot price of the electrical energy in the market. The [sddp-reports/sddpcmgd](https://github.com/psrenergy/psrio-base/blob/master/sddp-reports/sddpcmgd.lua) defines the script that averages the blocks and scenarios of the cmgdem output:
 
 ```lua
-sddpcmgd = require("sddp/sddpcmgd");
+sddpcmgd = require("sddp-reports/sddpcmgd");
 sddpcmgd():save("sddpcmgd");
 ```
 
@@ -109,6 +109,6 @@ Similar to `sddpcmgd`, the [sddp-reports/sddpcmga](https://github.com/psrenergy/
 
 
 ```lua
-sddpcmga = require("sddp/sddpcmga");
+sddpcmga = require("sddp-reports/sddpcmga");
 sddpcmga():save("sddpcmga");
 ```
