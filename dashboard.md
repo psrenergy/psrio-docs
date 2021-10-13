@@ -79,7 +79,7 @@ dashboard:save("sddp-dashboard");
 Some methods accept arguments to customize your chart, i.e., change its color, define the limits on the y axis, etc.
 
 The arguments are declared in tables inside the methods, as shown in the following example:
-`chart:add_line(exp, {yMin=0})`. The user can also define multiple arguments as follows `chart:add_line(exp, {yMin=0, color="#8583ff"})`. The following table describes the available chart arguments:
+`chart:add_line(exp, {yMin=0})`. The user can also define multiple arguments as follows `chart:add_line(exp, {yMin="0", color="#8583ff"})`. The following table describes the available chart arguments:
 
 | Argument | Default Value   | Description                                                 |
 |:---------|:--------------- |:------------------------------------------------------------|
@@ -101,7 +101,7 @@ gerhid = hydro:load("gerhid"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_
 light_blue = "#8583ff";
 
 chart = Chart("Hydro Generation");
-chart:add_line(gerhid, {yMin=0, color=light_blue});
+chart:add_line(gerhid, {yMin="0", yMax="1000", yLine="500", color=light_blue});
 
 dashboard = Dashboard("SDDP");
 dashboard:push(chart);
