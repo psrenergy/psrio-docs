@@ -16,15 +16,24 @@ nav_order: 10
 
 ## Circuit Loading
 
-``` lua
+```lua
 circuit = Circuit();
 cirflw = circuit:load("cirflw");
 (cirflw:abs() / circuit.capacity):convert("%"):save("usecir");
 ```
 
+## Circuit Losses
+
+```lua
+circuit = Circuit();
+r = circuit.resistance;
+f = circuit:load("cirflw");
+r * (f^2):save("losses");
+```
+
 ## Deficit Risk per Year
 
-``` lua
+```lua
 system = System();
 deficit = system:load("defcit");
 
@@ -36,7 +45,7 @@ ifelse(deficit:gt(0), 1, 0):aggregate_scenarios(BY_AVERAGE()):convert("%"):save(
 
 ## Thermal Generation per Fuel
 
-``` lua
+```lua
 thermal = Thermal();
 gerter = thermal:load("gerter");
 gerter:aggregate_agents(BY_SUM(), Collection.FUEL):save("gerter_per_fuel");
@@ -44,7 +53,7 @@ gerter:aggregate_agents(BY_SUM(), Collection.FUEL):save("gerter_per_fuel");
 
 ## Renewable Generation per Technology
 
-``` lua
+```lua
 renewable = Renewable();
 gergnd = renewable:load("gergnd");
 
@@ -65,7 +74,7 @@ concatenate(
 
 ## Renewable Generation per System and Technology
 
-``` lua
+```lua
 renewable = Renewable();
 gergnd = renewable:load("gergnd");
 
