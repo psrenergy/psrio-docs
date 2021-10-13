@@ -28,7 +28,9 @@ cirflw = circuit:load("cirflw");
 circuit = Circuit();
 r = circuit.resistance;
 f = circuit:load("cirflw");
-r * (f^2):save("losses");
+
+losses = r * (f^2);
+losses:save("losses");
 ```
 
 ## Deficit Risk per Year
