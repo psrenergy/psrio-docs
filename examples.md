@@ -22,17 +22,6 @@ cirflw = circuit:load("cirflw");
 (cirflw:abs() / circuit.capacity):convert("%"):save("usecir");
 ```
 
-## Circuit Losses
-
-```lua
-circuit = Circuit();
-r = circuit.resistance;
-f = circuit:load("cirflw");
-
-losses = r * (f^2);
-losses:save("losses");
-```
-
 ## Deficit Risk per Year
 
 ```lua
