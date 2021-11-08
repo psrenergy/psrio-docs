@@ -24,7 +24,7 @@ Dashboards are panels that provide data visualization in a comprehensive way. PS
 | Push Chart object to Dashboard    | `dashboard:push(chart)`                                         |
 | Push Markdown line to Dashboard   | `dashboard:push(string)`                                        |
 | Push Markdown object to Dashboard | `dashboard:push(md)`                                            |
-| Save Dashbaord with filename      | `dashboard:save(string)`                                        |
+| Save Dashboard with filename      | `dashboard:save(string)`                                        |
 
 ## Charts
 
@@ -74,7 +74,7 @@ dashboard:push(chart);
 dashboard:save("sddp-dashboard");
 ```
 
-### Chart attributes
+### Chart Attributes
 
 Some methods accept arguments to customize your chart, i.e., change its color, define the limits on the y axis, etc.
 
@@ -105,6 +105,31 @@ chart:add_line(gerhid, {yMin="0", yMax="1000", yLine="500", color=light_blue});
 
 dashboard = Dashboard("SDDP");
 dashboard:push(chart);
+dashboard:save("sddp-dashboard");
+```
+
+## Multiple Dashboards (Tabs)
+
+``` lua
+hydro = Hydro();
+gerhid = hydro:load("gerhid"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
+
+chart1 = Chart("Chart1");
+chart1:add_line(gerhid);
+
+tab1 = Dashboard("Tab1");
+dashboard:push(chart1);
+
+thermal = Thermal();
+gerter = thermal:load("gerter"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
+
+chart2 = Chart("Chart2");
+chart2:add_line(gerhid);
+
+tab2 = Dashboard("Tab2");
+dashboard:push(chart2);
+
+dashboard = tab1 + tab2;
 dashboard:save("sddp-dashboard");
 ```
 
