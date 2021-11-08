@@ -110,7 +110,7 @@ dashboard:save("sddp-dashboard");
 
 ## Multiple Dashboards (Tabs)
 
-``` lua
+```lua
 hydro = Hydro();
 gerhid = hydro:load("gerhid"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
 
@@ -118,7 +118,7 @@ chart1 = Chart("Chart1");
 chart1:add_line(gerhid);
 
 tab1 = Dashboard("Tab1");
-dashboard:push(chart1);
+tab1:push(chart1);
 
 thermal = Thermal();
 gerter = thermal:load("gerter"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
@@ -127,7 +127,7 @@ chart2 = Chart("Chart2");
 chart2:add_line(gerhid);
 
 tab2 = Dashboard("Tab2");
-dashboard:push(chart2);
+tab2:push(chart2);
 
 dashboard = tab1 + tab2;
 dashboard:save("sddp-dashboard");
