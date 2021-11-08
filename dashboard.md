@@ -124,7 +124,7 @@ thermal = Thermal();
 gerter = thermal:load("gerter"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
 
 chart2 = Chart("Chart2");
-chart2:add_line(gerhid);
+chart2:add_line(gerter);
 
 tab2 = Dashboard("Tab2");
 tab2:push(chart2);
