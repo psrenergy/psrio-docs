@@ -124,7 +124,6 @@ scenarios = gerter:scenarios() -- 1200
 agents = gerter:agents() -- {"Thermal 1", "Thermal 2", "Thermal 3"}
 
 size = gerter:agents_size() -- 3
-
 for i = 1,size do
     agent = gerter:agent(i);
     info(agent .. " at index " .. i);
