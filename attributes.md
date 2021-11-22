@@ -123,11 +123,16 @@ scenarios = gerter:scenarios() -- 1200
 ```lua 
 agents = gerter:agents() -- {"Thermal 1", "Thermal 2", "Thermal 3"}
 
-agents_size = gerter:agents_size() -- 3
+size = gerter:agents_size() -- 3
 
-agent1 = gerter:agent(1) -- "Thermal 1"
-agent2 = gerter:agent(2) -- "Thermal 2"
-agent3 = gerter:agent(3) -- "Thermal 3"
+for i = 1,size do
+    agent = gerter:agent(i);
+    info(agent .. " at index " .. i);
+end
+
+-- Thermal 1 at index 1
+-- Thermal 2 at index 2
+-- Thermal 3 at index 3
 ```
 
 ## Unit
