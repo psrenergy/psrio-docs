@@ -121,9 +121,9 @@ scenarios = gerter:scenarios() -- 1200
 {: .no_toc}
 
 ```
-Thermal 1 at index 1
-Thermal 2 at index 2
-Thermal 3 at index 3
+[info] Thermal 1 at index 1
+[info] Thermal 2 at index 2
+[info] Thermal 3 at index 3
 ```
 
 ```lua 
