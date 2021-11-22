@@ -120,18 +120,25 @@ scenarios = gerter:scenarios() -- 1200
 #### Example 
 {: .no_toc}
 
+```
+Thermal 1 at index 1
+Thermal 2 at index 2
+Thermal 3 at index 3
+```
+
 ```lua 
 agents = gerter:agents() -- {"Thermal 1", "Thermal 2", "Thermal 3"}
+for i, agent in ipairs(agents) do
+    info(agent .. " at index " .. i);
+end
+```
 
+```lua 
 size = gerter:agents_size() -- 3
 for i = 1,size do
     agent = gerter:agent(i);
     info(agent .. " at index " .. i);
 end
-
--- Thermal 1 at index 1
--- Thermal 2 at index 2
--- Thermal 3 at index 3
 ```
 
 ## Unit
