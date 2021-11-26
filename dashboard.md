@@ -81,15 +81,16 @@ Some methods accept arguments to customize your chart, i.e., change its color, d
 The arguments are declared in tables inside the methods, as shown in the following example:
 `chart:add_line(exp, {yMin="0"})`. The user can also define multiple arguments as follows `chart:add_line(exp, {yMin="0", color="#8583ff"})`. The following table describes the available chart arguments:
 
-| Argument | Default Value   | Description                                                 |
-|:---------|:--------------- |:------------------------------------------------------------|
-| `color`  | auto            | The color of the chart (e.g. `#ff0000` or `red`)            |
-| `yMin`   | auto            | The minimum value of the y axis                             |
-| `yMax`   | auto            | The maximum value of the y axis                             |
-| `yLine`  | ---             | Draw a horizontal line on the y axis at the provided value  |
-| `xMin`   | auto            | The minimum value of the x axis                             |
-| `xMax`   | auto            | The maximum value of the x axis                             |
-| `xLine`  | ---             | Draw a vertical line on the x axis at the provided value    |
+| Argument      | Default Value   | Description                                                 |
+|:--------------|:--------------- |:------------------------------------------------------------|
+| `color`       | auto            | The color of the chart (e.g. `#ff0000` or `red`)            |
+| `fillOpacity` | auto            | The fill opacity for the area                               |
+| `yMin`        | auto            | The minimum value of the y axis                             |
+| `yMax`        | auto            | The maximum value of the y axis                             |
+| `yLine`       | ---             | Draw a horizontal line on the y axis at the provided value  |
+| `xMin`        | auto            | The minimum value of the x axis                             |
+| `xMax`        | auto            | The maximum value of the x axis                             |
+| `xLine`       | ---             | Draw a vertical line on the x axis at the provided value    |
 
 #### Example 1
 {: .no_toc }
