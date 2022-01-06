@@ -451,7 +451,8 @@ We can use the selection methods to filter the agents that contain some desired 
 
 | Method                                                                     | Syntax                                                          |
 |:---------------------------------------------------------------------------|:----------------------------------------------------------------|
-| Select agents by a list of agents names or indices                         | `exp = exp1:select_agents({string or int, int or string, ...})` |
+| Select an agent by the name or index                                       | `exp = exp1:select_agent(string or int)`                        |
+| Select multiple agents by a list of names or indices                       | `exp = exp1:select_agents({string or int, int or string, ...})` |
 | Select agents by a [collection][collections]                               | `exp = exp1:select_agents(collection)`                          |
 | Select agents by a query                                                   | `exp = exp1:select_agents(query)`                               |
 
