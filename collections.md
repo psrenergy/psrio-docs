@@ -348,3 +348,39 @@ outdfact = generic:load("outdfact");
 | Specific Fuel Consumption (segment 3)            | gal/MWh | `exp = thermal.cesp3`                                        |
 | Must Run                                         | ---     | `exp = thermal.must_run`                                     |
 | Forced Generation                                | MW      | `exp = thermal.forced_generation`                            |
+
+
+## Loading a Generic CSV
+
+| Operator          | Syntax                                     |
+|:------------------|:-------------------------------------------|
+| Load table method | `table = study:load_table("filename.csv")` |
+
+The following example loads two outputs, gerhid and fprodt, considering the agents as hydro plants collection:
+
+#### Example 1
+{: .no_toc }
+
+`PortfolioDecision_OPT_FISICA.csv`:
+```csv
+Name         , Node, Interval, Startup, Participation
+H_1_1        , 1   , 1       , 1      , 0.79
+R_1_3        , 1   , 1       , 1      , 0.20
+CONTRATO_FLAT, 1   , 1       , 1      , 1
+```
+
+```lua
+study = Study();
+table = study:load_table("PortfolioDecision_OPT_FISICA.csv");
+
+info("Name,Node,Interval,Startup,Participation");
+for i=1,#table do
+    info(
+        table[i]["Name"] .. "," .. 
+        table[i]["Node"] .. "," .. 
+        table[i]["Interval"] .. "," .. 
+        table[i]["Startup"] .. "," .. 
+        table[i]["Participation"]
+    );
+end
+```
