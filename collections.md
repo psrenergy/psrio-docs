@@ -356,7 +356,7 @@ outdfact = generic:load("outdfact");
 |:------------------|:-------------------------------------------|
 | Load table method | `table = study:load_table("filename.csv")` |
 
-The following example loads two outputs, gerhid and fprodt, considering the agents as hydro plants collection:
+The following example loads a generic csv table and iterates through the rows:
 
 #### Example 1
 {: .no_toc }
