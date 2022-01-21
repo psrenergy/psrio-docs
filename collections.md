@@ -362,7 +362,7 @@ The following example loads two outputs, gerhid and fprodt, considering the agen
 {: .no_toc }
 
 `PortfolioDecision_OPT_FISICA.csv`:
-```csv
+```
 Name         , Node, Interval, Startup, Participation
 H_1_1        , 1   , 1       , 1      , 0.79
 R_1_3        , 1   , 1       , 1      , 0.20
