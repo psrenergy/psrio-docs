@@ -208,7 +208,7 @@ gerter_gt_zero = ifelse(gerter:gt(0.0), 1, 0);
 ## Unit Conversion
 
 <div style="text-align:center">
-    <img src="images/si.svg" width="200"/>
+    <img src="https://services.psr-inc.com/github/psrio-docs/expressions/si.svg" width="200"/>
 </div>
 
 The units conversion follows the International System of Units (SI), based on the [2019 redefinition](https://www.nist.gov/si-redefinition). The PSRIO will perform a multi-step process with all the expressions inputs, producing a conversion factor with the desired unit.
