@@ -202,21 +202,21 @@ outdfact = generic:load("outdfact");
 
 ### Hydro
 
-| Data                                             | Unit  | Syntax                                       |
-|:-------------------------------------------------|:-----:|:---------------------------------------------|
-| Construction Status (existing = 0 or future = 1) | ---   | `exp = hydro.status`                         |
-| Number of Generating Units                       | ---   | `exp = hydro.units`                          |
-| Total Installed Capacity                         | MW    | `exp = hydro.capacity`                       |
-| Total Installed Capacity (maintenance)           | MW    | `exp = hydro.capacity_maintenance`           |
-| Forced Outage Rate                               | %     | `exp = hydro.FOR`                            |
-| Historical Outage Factor                         | %     | `exp = hydro.COR`                            |
-| Minimum Storage                                  | hm3   | `exp = hydro.vmin`                           |
-| Maximum Storage                                  | hm3   | `exp = hydro.vmax`                           |
-| Minimum Turbining Outflow                        | m3/s  | `exp = hydro.qmin`                           |
-| Maximum Turbining Outflow                        | m3/s  | `exp = hydro.qmax`                           |
-| O&M Cost                                         | $/MWh | `exp = hydro.omcost`                         |
-| Irrigation                                       | m3/s  | `exp = hydro.irrigation`                     |
-| Target Storage Tolerance                         | %     | `exp = hydro.target_storage_tolerance`       |
+| Data                                                        | Unit  | Syntax                                                       |
+|:------------------------------------------------------------|:-----:|:-------------------------------------------------------------|
+| Construction Status (existing = 0 or future = 1)            | ---   | `exp = hydro.status`                                         |
+| Number of Generating Units                                  | ---   | `exp = hydro.units`                                          |
+| Total Installed Capacity                                    | MW    | `exp = hydro.capacity`                                       |
+| Total Installed Capacity (maintenance)                      | MW    | `exp = hydro.capacity_maintenance`                           |
+| Forced Outage Rate                                          | %     | `exp = hydro.FOR`                                            |
+| Historical Outage Factor                                    | %     | `exp = hydro.COR`                                            |
+| Minimum Storage                                             | hm3   | `exp = hydro.vmin`                                           |
+| Maximum Storage                                             | hm3   | `exp = hydro.vmax`                                           |
+| Minimum Turbining Outflow                                   | m3/s  | `exp = hydro.qmin`                                           |
+| Maximum Turbining Outflow                                   | m3/s  | `exp = hydro.qmax`                                           |
+| O&M Cost                                                    | $/MWh | `exp = hydro.omcost`                                         |
+| Irrigation                                                  | m3/s  | `exp = hydro.irrigation`                                     |
+| Target Storage Tolerance                                    | %     | `exp = hydro.target_storage_tolerance`                       |
 
 | Data                                                        | Unit  | Syntax                                                       |
 |:------------------------------------------------------------|:-----:|:-------------------------------------------------------------|

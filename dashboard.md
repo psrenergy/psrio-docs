@@ -39,17 +39,18 @@ After creating the chart object, we can start to push the data in it. PSRIO give
 
 | Method                         | Syntax                                                          |
 |:-------------------------------|:----------------------------------------------------------------|
-| Add Line                       | `chart:add_line(exp1)`                                          |
-| Add Line Stacking              | `chart:add_line_stacking(exp1)`                                 |
-| Add Line Percent               | `chart:add_line_percent(exp1)`                                  |
-| Add Column                     | `chart:add_column(exp1)`                                        |
-| Add Column Stacking            | `chart:add_column_stacking(exp1)`                               |
-| Add Column Percent             | `chart:add_column_percent(exp1)`                                |
-| Add Area                       | `chart:add_area(exp1)`                                          |
-| Add Area Stacking              | `chart:add_area_stacking(exp1)`                                 |
-| Add Area Percent               | `chart:add_area_percent(exp1)`                                  |
+| Add Line                       | `chart:add_line(exp)`                                           |
+| Add Line Stacking              | `chart:add_line_stacking(exp)`                                  |
+| Add Line Percent               | `chart:add_line_percent(exp)`                                   |
+| Add Column                     | `chart:add_column(exp)`                                         |
+| Add Column Stacking            | `chart:add_column_stacking(exp)`                                |
+| Add Column Percent             | `chart:add_column_percent(exp)`                                 |
+| Add Area                       | `chart:add_area(exp)`                                           |
+| Add Area Stacking              | `chart:add_area_stacking(exp)`                                  |
+| Add Area Percent               | `chart:add_area_percent(exp)`                                   |
 | Add Area Range                 | `chart:add_area_range(exp1, exp2)`                              |
-| Add Pie                        | `chart:add_pie(exp1)`                                           |
+| Add Pie                        | `chart:add_pie(exp)`                                            |
+| Add Pie                        | `chart:add_heatmap(exp)`                                        |
 
 The basic workflow in PSRIO to create a dashboard is:
 
@@ -91,6 +92,7 @@ The arguments are declared in tables inside the methods, as shown in the followi
 | `xMin`        | auto            | The minimum value of the x axis                             |
 | `xMax`        | auto            | The maximum value of the x axis                             |
 | `xLine`       | ---             | Draw a vertical line on the x axis at the provided value    |
+| `stops`       | auto            | Color stops for the gradient of a scalar color axis         |
 
 #### Example 1
 {: .no_toc }
@@ -106,17 +108,17 @@ chart:add_line(gerhid, {yMin="0", yMax="1000", yLine="500", color=light_blue});
 
 dashboard = Dashboard("SDDP");
 dashboard:push(chart);
-dashboard:save("sddp-dashboard");
+dashboard:save("sddp-gerhid");
 ```
 
-## Multiple Dashboards (Tabs)
+#### Example 2: Multiple Tabs
 
 ```lua
 hydro = Hydro();
 gerhid = hydro:load("gerhid"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
 
 chart1 = Chart("Chart 1");
-chart1:add_line(gerhid);
+chart1:add_area(gerhid);
 
 tab1 = Dashboard("Tab1");
 tab1:push(chart1);
@@ -125,14 +127,29 @@ thermal = Thermal();
 gerter = thermal:load("gerter"):aggregate_blocks(BY_SUM()):aggregate_scenarios(BY_AVERAGE());
 
 chart2 = Chart("Chart 2");
-chart2:add_line(gerter);
+chart2:add_area(gerter);
 
 tab2 = Dashboard("Tab2");
 tab2:push(chart2);
 
 dashboard = tab1 + tab2;
-dashboard:save("sddp-dashboard");
+dashboard:save("sddp-generation");
 ```
+
+#### Example 3: Heatmap
+
+``` lua
+system = System();
+cmgdem = system:load("cmgdem"):aggregate_scenarios(BY_AVERAGE()):aggregate_agents(BY_SUM(), "Load Marginal Cost");
+
+chart = Chart("Hourly Cost");
+chart:add_heatmap(gerhid, {stops="[[0, \"#3060cf\"], [0.5, \"#fffbbc\"], [0.9, \"#c4463a\"],[1, \"#c4463a\"]]"});
+
+dashboard = Dashboard("SDDP");
+dashboard:push(chart);
+dashboard:save("sddp-cmgdem");
+```
+
 
 ## Markdown
 

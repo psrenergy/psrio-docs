@@ -160,19 +160,19 @@ There are two ways to run the script above. We are now going to explain each one
 Graph 4.0 is a graphing tool that allows us to make PSRIO scripts inside an editor. After the execution of SDDP, open Graph 4.0:
 
 <div style="text-align:center">
-    <img src="images\getting_started\graph_1.png" width="600"/>
+    <img src="https://services.psr-inc.com/github/psrio-docs/getting_started/graph_1.png" width="600"/>
 </div>
 
 Select the PSRIO editor option in the menu located on the left side of your screen:
 
 <div style="text-align:center">
-    <img src="images\getting_started\graph_2.png" width="600"/>
+    <img src="https://services.psr-inc.com/github/psrio-docs/getting_started/graph_2.png" width="600"/>
 </div>
 
 You can create a new script, write down the code, save it, and then you will be ready to go.
 
 <div style="text-align:center">
-    <img src="images\getting_started\graph_3.png" width="600"/>
+    <img src="https://services.psr-inc.com/github/psrio-docs/getting_started/graph_3.png" width="600"/>
 </div>
 
 ### SDDP
@@ -180,6 +180,6 @@ You can create a new script, write down the code, save it, and then you will be 
 We can run a PSRIO script automatically after an SDDP execution. To do it, we need to save an `sddp.lua` file in the case folder. The SDDP model will run this script and produce the outputs and dashboard defined on it.
 
 <div style="text-align:center">
-    <img src="images\getting_started\sddp.png" width="750"/>
+    <img src="https://services.psr-inc.com/github/psrio-docs/getting_started/sddp.png" width="750"/>
 </div>
 
