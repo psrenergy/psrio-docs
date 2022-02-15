@@ -136,7 +136,7 @@ All the above-mentioned binary expressions follow the same rules to define the r
 
 ### Stages and Scenarios
 
-If one expression has n stages, and the other has only `1`, the result will have `n` stages. If the `exp1` has `n1` stages and `exp2` has `n2`, the resulting expression will have `n3` as the minimum number of stages between the two. In other words, `n3 = min{n1, n2}`. If both expressions have `1` stage, the result will naturally have also `1`. The same rule is applied to the scenarios. The table below summarizes the explanation:
+If one expression has `n` stages, and the other has only `1`, the result will have `n` stages. If the `exp1` has `n1` stages and `exp2` has `n2`, the resulting expression will have `n3` as the minimum number of stages between the two. In other words, `n3 = min{n1, n2}`. If both expressions have `1` stage, the result will naturally have also `1`. The same rule is applied to the scenarios. The table below summarizes the explanation:
 
 | exp1     | exp2     | exp         |
 |:--------:|:--------:|:-----------:|
