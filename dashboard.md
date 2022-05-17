@@ -101,7 +101,7 @@ The arguments are declared in tables inside the methods, as shown in the followi
 | `xGridLineWidth = ?`         | `0`, `1`, `2`, ...                                                                                                                            |
 | `fillOpacity = ?`            | `0.0` to `1.0`                                                                                                                                |
 | `dashStyle = ?`              | `solid`, `shortdash`, `shortdot`, `shortdashdot`, `shortdashdotdot`, `dot`, `dash`, `longdash`, `dashdot`, `longdashdot`, and `longdashdotdo` |
-| `stops = { {?, ?}, ... }`    | e.g. stops = {{0.0, "#3060cf"}, {0.5, "#fffbbc"}, {0.9, '#c4463a"}}                                                                           |
+| `stops = { {?, ?}, ... }`    | e.g. `stops = {{0.0, "#3060cf"}, {0.5, "#fffbbc"}, {0.9, '#c4463a"}}`                                                                         |
 
 #### Example 1
 {: .no_toc }
