@@ -117,7 +117,7 @@ outdfact = generic:load("outdfact");
 
 <!-- ### Bus -->
 
-### Circuit
+<!-- ### Circuit
 
 | Data                                                                | Unit | Syntax                                  |
 |:--------------------------------------------------------------------|:----:|:----------------------------------------|
@@ -171,7 +171,7 @@ outdfact = generic:load("outdfact");
 |:-----------------|:-----:|:---------------------------------------|
 | Fuel Cost        | $/gal | `exp = fuel.cost`                      |
 
-<!-- ### Fuel Consumption -->
+<!-- ### Fuel Consumption
 
 ### Fuel Contract
 
@@ -190,7 +190,7 @@ outdfact = generic:load("outdfact");
 | Maximum Injection Limit                 | ---   | `exp = fuel_reservoir.maxinjection`               |
 | Maximum Injection Limit (chronological) | ---   | `exp = fuel_reservoir.maxinjection_chronological` |
 
-<!-- ### Generator -->
+<!-- ### Generator
 
 ### Generation Constraint
 
@@ -198,7 +198,7 @@ outdfact = generic:load("outdfact");
 |:-----------------|:-----:|:-------------------------------------------------|
 |                  | MW    | `exp = generation_constraint.capacity`           |
 
-<!-- ### Generic -->
+<!-- ### Generic
 
 ### Hydro
 
@@ -283,7 +283,7 @@ outdfact = generic:load("outdfact");
 | Construction Status (existing = 0 or future = 1) |       | `exp = renewable.existing`                                   |
 | Technology Type                                  |       | `exp = renewable.tech_type`                                  |
 | Installed Capacity                               | MW    | `exp = renewable.capacity`                                   |
-| O&M Cost                                         | $/MWh | `exp = renewable.omcost`                                     |
+| O&M Cost                                         | $/MWh | `exp = renewable.omcost`                                     | -->
 
 <!-- ### Renewable Gauging Station
 
@@ -291,7 +291,7 @@ outdfact = generic:load("outdfact");
 |:--------------------|:-----:|:-------------------------------------------------------------|
 |                     | MW   | `exp = renewable_gauging_station.hourgeneration`                |
 
-<!-- ### Reserve Generation Constraint -->
+<!-- ### Reserve Generation Constraint
 
 ### Study
 
@@ -318,37 +318,37 @@ outdfact = generic:load("outdfact");
 |                     | number  | `attribute = study:stages_per_year()`                        |
 |                     | number  | `attribute = study:scenarios()`                              | 
 |                     | number  | `attribute = study:scenarios()`                              | 
+-->
 
-<!-- ### System
+### System
 
-| Data                | Unit  | Syntax                                                       |
-|:--------------------|:-----:|:-------------------------------------------------------------|
-|                     | ---   | `exp = system.duraci`                                        |
-|                     | ---   | `exp = system.hblock`                                        |
-|                     | ---   | `exp = system.sensitivity`                                   | -->
+| Data                                         | Unit    |
+|:---------------------------------------------|:-------:|
+| `system.load_level_length`                   | ---     |
+| `system.hour_block_map`                      | ---     |
+| `system.sensitivity`                         | ---     |
 
 ### Thermal
 
-| Data                                             | Unit    | Syntax                                                       |
-|:-------------------------------------------------|:-------:|:-------------------------------------------------------------|
-| Construction Status (existing = 0 or future = 1) | ---     | `exp = thermal.status`                                       |
-| Plant Type                                       | ---     | `exp = thermal.type`                                         |
-| Number of Units                                  | ---     | `exp = thermal.units`                                        |
-| Maximum Generation                               | MW      | `exp = thermal.capacity`                                     |
-| Maximum Generation (maintenance)                 | MW      | `exp = thermal.capacity_maintenance`                         |
-| Minimum Generation                               | MW      | `exp = thermal.germin`                                       |
-| Minimum Generation (maintenance)                 | MW      | `exp = thermal.germin_maintenance`                           |
-| Forced Outage Rate                               | %       | `exp = thermal.FOR`                                          |
-| Composite Outage Rate                            | %       | `exp = thermal.COR`                                          |
-| Startup Cost                                     | k$      | `exp = thermal.startup_cost`                                 |
-| O&M Variable Cost                                | $/MWh   | `exp = thermal.omcost`                                       |
-| Transportation Cost                              | $/gal   | `exp = thermal.transport_cost`                               |
-| Specific Fuel Consumption (segment 1)            | gal/MWh | `exp = thermal.cesp1`                                        |
-| Specific Fuel Consumption (segment 2)            | gal/MWh | `exp = thermal.cesp2`                                        |
-| Specific Fuel Consumption (segment 3)            | gal/MWh | `exp = thermal.cesp3`                                        |
-| Must Run                                         | ---     | `exp = thermal.must_run`                                     |
-| Forced Generation                                | MW      | `exp = thermal.forced_generation`                            |
-
+| Data                                         | Unit    |
+|:---------------------------------------------|:-------:|
+| `thermal.state`                              | ---     |
+| `thermal.system`                             | ---     |
+| `thermal.minimum_generation`                 | MW      |
+| `thermal.minimum_generation_available`       | MW      |
+| `thermal.minimum_generation_constraint`      | MW      |
+| `thermal.maximum_generation`                 | MW      |
+| `thermal.maximum_generation_available`       | MW      |
+| `thermal.forced_outage_rate`                 | %       |
+| `thermal.historical_outage_factor`           | %       |
+| `thermal.startup_cost`                       | k$      |
+| `thermal.om_cost`                            | $/MWh   |
+| `thermal.specific_consumption_segment_1`     | gal/MWh |
+| `thermal.specific_consumption_segment_2`     | gal/MWh |
+| `thermal.specific_consumption_segment_3`     | gal/MWh |
+| `thermal.fuel_transportation_cost`           | $/gal   |
+| `thermal.operation_mode`                     | ---     |
+| `thermal.forced_generation`                  | MW      |
 
 ## Loading a Generic CSV
 
@@ -361,7 +361,7 @@ The following example loads a generic csv table and iterates through the rows:
 #### Example 1
 {: .no_toc }
 
-`PortfolioDecision_OPT_FISICA.csv`:
+`file.csv`:
 ```
 Name         , Node, Interval, Startup, Participation
 H_1_1        , 1   , 1       , 1      , 0.79
@@ -371,7 +371,7 @@ CONTRATO_FLAT, 1   , 1       , 1      , 1
 
 ```lua
 study = Study();
-table = study:load_table("PortfolioDecision_OPT_FISICA.csv");
+table = study:load_table("file.csv");
 
 info("Name,Node,Interval,Startup,Participation");
 for i=1,#table do
