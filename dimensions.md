@@ -502,7 +502,8 @@ We should use the following methods to rename the agents from a data set:
 |:---------------------------------------------------------------------------|:----------------------------------------------------------------|
 | Rename the agents based on the input vector                                | `exp = exp1:rename_agents({string, string, ...})`               |
 | Rename all the agents names                                                | `exp = exp1:rename_agents(string)`                              |
-| Add a suffix to all agents names                                           | `exp = exp1:rename_agents_with_suffix(string)`                  |
+| Add a suffix to all agents names                                           | `exp = exp1:add_suffix(string)`                                 |
+| Add a prefix to all agents names                                           | `exp = exp1:add_prefix(string)`                                 |
 
 #### Example 1
 {: .no_toc }

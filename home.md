@@ -49,8 +49,8 @@ Additionally, PSRIO also enables the direct creation of dashboards.
 - "The simplest thing that could possibly work"
 - Simple, yet powerful, language for embedding and extending applications
 - Portable and small, written in ANSI C, easy to integrate with C/C++
-- TIOBE Index for November 2021:
-  - 1st Python; 2nd C; 3rd Java; 4th C++; 5th C#; 7th JavaScript; 19th Fortran; **26th Lua**; 36th Julia
+- TIOBE Index for May 2022:
+  - 1st Python; 2nd C; 3rd Java; 4th C++; 5th C#; 7th JavaScript; **18th Lua**; 25th Julia; 30th Fortran
 - Widely used in Triple-A games and small devices (embedded systems and IoT)
 
 ### Scripting + LUA + PSR = PSRIO

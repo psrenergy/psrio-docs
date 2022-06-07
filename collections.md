@@ -21,7 +21,7 @@ nav_order: 3
 | Area                          | `area = Area()`                                                  |
 | Balancing Area                | `balancing_area = BalancingArea()`                               |
 | Balancing Area Hydro          | `balancing_area_hydro = BalancingAreaHydro()`                    |
-| Balancing Area Thermal        | `Balancing_area_thermal = BalancingAreaThermal()`                |
+| Balancing Area Thermal        | `balancing_area_thermal = BalancingAreaThermal()`                |
 | Battery                       | `battery = Battery()`                                            |
 | Bus                           | `bus = Bus()`                                                    |
 | Circuit                       | `circuit = Circuit()`                                            |
@@ -369,6 +369,7 @@ R_1_3        , 1   , 1       , 1      , 0.20
 CONTRATO_FLAT, 1   , 1       , 1      , 1
 ```
 
+script:
 ```lua
 study = Study();
 table = study:load_table("file.csv");
